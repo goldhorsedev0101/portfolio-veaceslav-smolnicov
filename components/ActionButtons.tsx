@@ -1,7 +1,6 @@
 // components/sections/ActionButtons.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { FaCode, FaFileAlt } from 'react-icons/fa';
 
 const ActionButtons = () => (
@@ -11,7 +10,7 @@ const ActionButtons = () => (
     transition={{ delay: 1.2, duration: 0.8 }}
     className="flex justify-center space-x-4"
   >
-    <Link 
+    <a 
       href="/pdf/resume.pdf" 
       target="_blank" 
       rel="noopener noreferrer"
@@ -23,7 +22,7 @@ const ActionButtons = () => (
       >
         <FaFileAlt className="mr-8" /> Resume
       </motion.button>
-    </Link>
+    </a>
   </motion.div>
 );
 

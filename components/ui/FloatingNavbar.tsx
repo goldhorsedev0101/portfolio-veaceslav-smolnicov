@@ -61,23 +61,45 @@ export const FloatingNav = ({
                 transition={{ delay: 0.1 * idx, duration: 0.5 }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
-                <Link
-                  href={item.link}
-                  className={cn(
-                    "flex items-center px-3 py-2 rounded-md text-sm sm:text-base font-semibold transition-all duration-200 ease-in-out",
-                    activeSection === item.link.slice(1)
-                      ? "text-primary bg-primary/10"
-                      : "text-foreground hover:text-primary"
-                  )}
-                >
-                  <motion.span
-                    className="mr-2 inline-block"
-                    whileHover={{ scale: 1.2, rotate: 5 }}
+                {item.link.startsWith('/pdf/') || item.link.endsWith('.pdf') ? (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "flex items-center px-3 py-2 rounded-md text-sm sm:text-base font-semibold transition-all duration-200 ease-in-out",
+                      activeSection === item.link.slice(1)
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground hover:text-primary"
+                    )}
                   >
-                    {item.icon}
-                  </motion.span>
-                  <span>{item.name}</span>
-                </Link>
+                    <motion.span
+                      className="mr-2 inline-block"
+                      whileHover={{ scale: 1.2, rotate: 5 }}
+                    >
+                      {item.icon}
+                    </motion.span>
+                    <span>{item.name}</span>
+                  </a>
+                ) : (
+                  <Link
+                    href={item.link}
+                    className={cn(
+                      "flex items-center px-3 py-2 rounded-md text-sm sm:text-base font-semibold transition-all duration-200 ease-in-out",
+                      activeSection === item.link.slice(1)
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground hover:text-primary"
+                    )}
+                  >
+                    <motion.span
+                      className="mr-2 inline-block"
+                      whileHover={{ scale: 1.2, rotate: 5 }}
+                    >
+                      {item.icon}
+                    </motion.span>
+                    <span>{item.name}</span>
+                  </Link>
+                )}
               </motion.li>
             </React.Fragment>
           ))}
