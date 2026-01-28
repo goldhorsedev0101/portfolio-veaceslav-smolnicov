@@ -2,18 +2,15 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { useMediaQuery } from '@/hooks/use-media-query';
 
 const Footer: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com/krishnavalliappan' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/krishnavalliappan/' },
-    { icon: FaInstagram, href: 'https://www.instagram.com/_krishnav24/' },
-    { icon: FaTwitter, href: 'https://x.com/krish_kumar2498' },
-    { icon: FaEnvelope, href: 'mailto:krishnavalliappan02@gmail.com' },
+    { icon: FaLinkedin, href: 'https://linkedin.com/in/slava-smolnicov-in' },
+    { icon: FaEnvelope, href: 'mailto:veaceslavsmolnicov.in@gmail.com' },
   ];
 
   return (
@@ -50,12 +47,9 @@ const Footer: React.FC = () => {
           <p className="text-lg font-mono">
             Designed & Built by{' '}
             <span className="text-primary font-bold">
-              Krishnakumar
+              Veaceslav Smolnicov
             </span>{' '}
-            <span className="animate-pulse inline-block">🚀</span>
-          </p>
-          <p className="mt-2 text-sm">
-            Powered by coffee, curiosity, and a dash of nerdy enthusiasm!
+            <span className="animate-pulse inline-block"></span>
           </p>
         </motion.div>
       </div>

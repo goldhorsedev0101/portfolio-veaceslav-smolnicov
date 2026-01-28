@@ -1,18 +1,23 @@
 // components/SkillsGrid.tsx
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { FaPython, FaDatabase, FaChartBar, FaCode, FaReact, FaJs, FaNodeJs, FaGithub } from 'react-icons/fa';
+import { FaPython, FaDatabase, FaCode, FaReact, FaJs, FaNodeJs, FaGithub, FaAws, FaBrain } from 'react-icons/fa';
+import { SiTypescript, SiNextdotjs, SiNestjs, SiPostgresql, SiMongodb, SiRedis, SiAngular, SiGraphql, SiReact } from 'react-icons/si';
 
 const SkillsGrid = () => {
   const skills = useMemo(() => [
-    { icon: <FaPython />, name: 'Python' },
-    { icon: <FaDatabase />, name: 'SQL' },
-    { icon: <FaChartBar />, name: 'Power BI' },
-    { icon: <FaCode />, name: 'Data Viz' },
-    { icon: <FaJs />, name: 'JavaScript' },
     { icon: <FaReact />, name: 'React' },
+    { icon: <SiTypescript />, name: 'TypeScript' },
+    { icon: <SiNextdotjs />, name: 'Next.js' },
     { icon: <FaNodeJs />, name: 'Node.js' },
-    { icon: <FaGithub />, name: 'Git' },
+    { icon: <SiNestjs />, name: 'NestJS' },
+    { icon: <SiAngular />, name: 'Angular' },
+    { icon: <SiGraphql />, name: 'GraphQL' },
+    { icon: <SiReact />, name: 'React Native' },
+    { icon: <FaPython />, name: 'Python' },
+    { icon: <SiPostgresql />, name: 'PostgreSQL' },
+    { icon: <FaAws />, name: 'AWS' },
+    { icon: <FaBrain />, name: 'AI' },
   ], []);
 
   const skillVariants = {
@@ -33,7 +38,7 @@ const SkillsGrid = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="grid grid-cols-4 gap-2 sm:gap-4 mb-8 -mx-2 sm:mx-0"
+      className="grid grid-cols-4 gap-3 sm:gap-5 md:gap-6 mb-8 -mx-2 sm:mx-0"
     >
       {skills.map((skill, index) => (
         <motion.div
@@ -43,10 +48,10 @@ const SkillsGrid = () => {
           initial="hidden"
           animate="visible"
           whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-          className="bg-card text-card-foreground rounded-lg p-2 sm:p-3 text-center flex flex-col items-center justify-center"
+          className="bg-card text-card-foreground rounded-lg p-3 sm:p-4 text-center flex flex-col items-center justify-center"
         >
-          <div className="text-2xl sm:text-3xl mb-1 text-primary">{skill.icon}</div>
-          <p className="text-xs sm:text-sm font-medium">{skill.name}</p>
+          <div className="text-3xl sm:text-4xl md:text-5xl mb-2 text-primary">{skill.icon}</div>
+          <p className="text-xs sm:text-sm md:text-base font-medium">{skill.name}</p>
         </motion.div>
       ))}
     </motion.div>

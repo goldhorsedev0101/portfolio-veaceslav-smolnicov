@@ -1,7 +1,6 @@
 // data/workExperience.ts
-import { FaBriefcase, FaPython, FaDatabase, FaChartBar, FaAws, FaReact, FaChalkboardTeacher, } from 'react-icons/fa';
-import { SiPowerbi } from 'react-icons/si';
-import { PiMathOperationsFill } from "react-icons/pi";
+import { FaBriefcase, FaPython, FaDatabase, FaAws, FaReact, FaCode, FaServer } from 'react-icons/fa';
+import { SiTypescript, SiNestjs, SiPostgresql, SiGraphql, SiNextdotjs, SiDocker, SiGithubactions } from 'react-icons/si';
 import React from 'react';
 
 export interface Skill {
@@ -13,6 +12,7 @@ export interface WorkExperience {
   company: string;
   position: string;
   duration: string;
+  location?: string;
   year: number;
   description: string[];
   skills: Skill[];
@@ -20,60 +20,75 @@ export interface WorkExperience {
 }
 
 export const workExperiences: WorkExperience[] = [
-{
-    company: "Concordia University",
-    position: "TA - Transform Calculus and PDE",
-    duration: "Sep 2023 - Dec 2023",
-    year: 2023,
-    description: [
-      "Crafted Python simulations to visualize (Fourier Series, Laplace Transforms, PDEs) solutions, enhancing student understanding of the link between theory and real-world applications.",
-      "Facilitated collaborative learning by leading group discussions and encouraging peer support, building a positive and productive learning environment.",
-      "Received excellent student feedback, contributing to a 20% increase in satisfaction ratings compared to previous terms."
-    ],
-    skills: [
-      { name: "Python", icon: FaPython },
-      { name: "Teaching", icon: FaChalkboardTeacher },
-      { name: "Mathematics", icon: PiMathOperationsFill },
-    ],
-    logo: "/logos/concordia-university.png" // Add the path to the Concordia University logo
-  },
   {
-    company: "IA Flow Elements",
-    position: "Associate Data Analyst",
-    duration: "April 2020 – July 2022",
-    year: 2020,
+    company: "ExpandX",
+    position: "Software Engineer",
+    duration: "01/2024 – Present",
+    location: "Remote",
+    year: 2024,
     description: [
-      "Engineered a predictive model using machine learning algorithms to forecast sales trends, enhancing decision-making accuracy and contributing to a 15% uplift in sales projections accuracy.",
-      "Boosted data processing efficiency by 40% via custom Python scripts for ETL automation, ensuring precise data handling from extraction to in-depth analysis, integrating with AWS cloud.",
-      "Led the team to optimize data processing workflows by 30% by migrating to AWS, enhancing both data handling efficiency and system scalability while also ensuring data accuracy.",
-      "Developed a Python-based application with a Tkinter GUI for the marketing team to add and track quotes, integrating with Power BI to visually monitor progress and improve quote management efficiency.",
-      "Established efficiency metrics and automated Excel dashboards using VBA scripting, which boosted the productivity and efficiency of designers and CAD technicians by over 25%.",
-      "Enhanced business process efficiency and decision support by collaborating with teams to optimize data workflows and designing tailored Power BI dashboards and KPI reports, resulting in improved strategic planning across the organization."
+      "Constructed web applications handling 9,000 concurrent users via React and TypeScript; optimized code, reducing latency during peak usage by 1.5 seconds, and improved end-user experience for high-value customers.",
+      "Delivered real-time analytics dashboards with React and TypeScript, eliminating 40% of manual KPI reporting and accelerating data-driven decisions.",
+      "Designed scalable backend services with Node.js, PostgreSQL, REST, and GraphQL, improving average response times by 30% while lowering query costs.",
+      "Connected 6+ external platforms including CRM, email automation, and analytics systems, shortening campaign execution cycles by 35%.",
+      "Provisioned serverless and containerized workloads on AWS (Lambda, ECS, S3), enabling elastic scaling with minimal operational overhead.",
     ],
     skills: [
-      { name: "Python", icon: FaPython },
-      { name: "SQL", icon: FaDatabase },
-      { name: "Power BI", icon: SiPowerbi },
+      { name: "React", icon: FaReact },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Node.js", icon: FaServer },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "GraphQL", icon: SiGraphql },
       { name: "AWS", icon: FaAws },
-      { name: "Data Visualization", icon: FaChartBar },
+      { name: "GitHub Actions", icon: SiGithubactions },
     ],
-    logo: "/logos/ia-flow.png"
+    logo: "https://expandx.com/",
   },
   {
-    company: "IA Flow Elements",
-    position: "CAD Designer",
-    duration: "June 2019 – March 2020",
+    company: "Temy",
+    position: "Full Stack Developer",
+    duration: "02/2021 – 11/2023",
+    location: "Remote",
+    year: 2021,
+    description: [
+      "Introduced Next.js server-side rendering, cutting first-page load times by 45% and strengthening organic search visibility.",
+      "Established secure API layers using JWT, OAuth2, and role-based access controls, safeguarding all authenticated workflows.",
+      "Engineered distributed transaction pipelines processing thousands of monthly payments via Stripe, PayPal, Plaid, and Payoneer.",
+      "Activated real-time notifications and live updates using WebSockets, raising user engagement by 25%.",
+      "Reinforced system stability through comprehensive unit and integration coverage, reducing production defects by 30%.",
+      "Containerized applications and coordinated CI/CD execution with Docker and GitLab pipelines, accelerating release cadence by 40%."
+    ],
+    skills: [
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "React", icon: FaReact },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Node.js", icon: FaServer },
+      { name: "Docker", icon: SiDocker },
+      { name: "JWT", icon: FaCode },
+    ],
+    logo: "https://www.temy.co/"
+  },
+  {
+    company: "CreativSoft",
+    position: "Software Developer",
+    duration: "12/2019 – 01/2021",
+    location: "Chisinau, Moldova",
     year: 2019,
     description: [
-      "Designed flow elements according to provided specifications using RW Miller software, improving product performance in the oil & gas sector.",
-      "Managed technical quotations, effectively converting quotes to orders, demonstrating strong business communication skills.",
-      "Handled client-centric reporting and documentation, ensuring tailored solutions and high customer satisfaction."
+      "Delivered web and mobile solutions for 10+ client engagements across education, enterprise, and healthcare domains.",
+      "Developed high-throughput backend systems managing millions of records with Node.js, Laravel, MySQL, and Redis.",
+      "Deployed authentication, multi-role authorization, and reporting capabilities adopted by hundreds of daily users.",
+      "Transformed legacy PHP and JavaScript systems into modern TypeScript-driven architectures, cutting maintenance overhead by 30%.",
+      "Crafted cross-platform mobile applications using React Native, maintaining full feature parity across Android and iOS.",
+      "Accelerated build and release operations via Jenkins-based pipelines, trimming release preparation time by 50%."
     ],
     skills: [
-      { name: "CAD", icon: FaReact },
-      { name: "Technical Documentation", icon: FaChartBar },
-      { name: "Client Communication", icon: FaBriefcase },
+      { name: "React Native", icon: FaReact },
+      { name: "Node.js", icon: FaServer },
+      { name: "Python", icon: FaPython },
+      { name: "MySQL", icon: FaDatabase },
+      { name: "TypeScript", icon: SiTypescript },
     ],
-    logo: "/logos/ia-flow.png"
+    logo: "https://www.creativ-soft.com/"
   }
 ];
