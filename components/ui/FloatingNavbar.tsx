@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
-
+import ActionButtons from "../ActionButtons";
 export const FloatingNav = ({
   navItems,
   className,
@@ -83,6 +83,7 @@ export const FloatingNav = ({
           ))}
         </ul>
       </nav>
+      
     </motion.div>
   );
 };

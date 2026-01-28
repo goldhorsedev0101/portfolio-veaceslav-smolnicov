@@ -4,7 +4,7 @@ import { inter, jetbrain_mono } from "@/app/fonts";
 import "./globals.css";
 import { ThemeProvider } from "@/app/ThemeProvider";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
-import { FaHome, FaUser, FaBriefcase, FaCode, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaUser, FaBriefcase, FaCode, FaEnvelope, FaFileAlt } from "react-icons/fa";
 import StickyIcons from "@/components/sections/StickyIcons";
 import Footer from "@/components/sections/Footer";
 import { Analytics } from "@vercel/analytics/react"
@@ -34,6 +34,11 @@ const navItems = [
     name: "Contact",
     link: "#contact",
     icon: <FaEnvelope />,
+  },
+  {
+    name: "Resume",
+    icon: <FaFileAlt />,
+    link: "/pdf/resume.pdf",
   },
 ];
 

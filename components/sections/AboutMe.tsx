@@ -6,15 +6,15 @@ import StyledPic from '../Styledpic';
 import { FaLightbulb, FaCode, FaPizzaSlice, FaHiking, FaPuzzlePiece, FaChalkboardTeacher } from 'react-icons/fa';
 import { useScrollSection } from '@/hooks/use-scroll-section';
 import { CardSpotlight } from '../ui/card-spotlight';
-import ActionButtons from '../ActionButtons';
+
 
 const AboutMe: React.FC = () => {
   const { ref, isVisible } = useScrollSection();
 
   return (
-    <div id="about" className="relative w-full flex flex-col sm:flex-row py-20 scroll-mt-20" ref={ref}>
+    <div id="about" className="relative w-full flex flex-col sm:flex-row align-center justify-center scroll-mt-20 py-8" ref={ref}>
       <motion.div 
-      className="w-full sm:w-[65%] pr-0 sm:pr-6 mb-8 sm:mb-0 sm:ml-[-20px]"
+      className="w-full sm:w-[85%] pr-0 sm:pr-6 mb-8 sm:mb-0 sm:ml-[-20px]"
         initial={{ opacity: 0, x: -50 }}
         animate={isVisible ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.5 }}
@@ -46,19 +46,6 @@ const AboutMe: React.FC = () => {
             </p>
           </CardContent>
         </Card>
-      </motion.div>
-      <motion.div 
-        className="w-full sm:w-[35%] flex flex-col justify-center items-center"
-        initial={{ opacity: 0, x: 50 }}
-        animate={isVisible ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <div className='w-full max-w-[320px] aspect-square mb-6'>
-          <StyledPic />
-        </div>
-        <div className="w-full pt-6">
-          <ActionButtons />
-        </div>
       </motion.div>
     </div>
   )
